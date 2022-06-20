@@ -1,0 +1,2 @@
+# Machine Learning Exploration
+This repository hosts some small personal projects that explore the subjects of machine learning, neural networks, and artificial intelligence! Right now it contains files from the [Neural Networks from Scratch](https://youtube.com/playlist?list=PLQVvvaa0QuDcjD5BAw2DxE6OF2tius3V3) series by Sentdex.
