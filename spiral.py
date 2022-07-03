@@ -1,22 +1,11 @@
 import numpy
 import nnfs
 
-X = [[1, 2, 3, 2.5],
-	 [2, 5, -1, 2], 
-     [-1.5, 2.7, 3.3, -0.8]]
+from nnfs.datasets import spiral_data
 
-inputs = [0, 2, -1, 3.3, -2.7, 1.1, 2.2, -100]
-output = []
+nnfs.init()
 
-for i in inputs:
-	if i > 0:
-		output.append(i)
-	elif i <= 0:
-		output.append(0)
-
-	# OR output.append(max(0, i))
-
-print(output)
+X, y = spiral_data(100, 3)
 
 class Layer_Dense:
 
@@ -33,13 +22,11 @@ class Activation_ReLU:
 	def forward(self, inputs):
 		self.output = numpy.maximum(0, inputs)
 
-layer_1 = Layer_Dense(4, 5)
-layer_2 = Layer_Dense(5, 2)
+layer_1 = Layer_Dense(2, 5)
+activation_1 = Activation_ReLU()
 
 layer_1.forward(X)
+
 print(layer_1.output)
-
-print("\n-----\n")
-
-layer_2.forward(layer_1.output)
-print(layer_2.output)
+activation_1.forward(layer_1.output)
+print(activation_1.output)
